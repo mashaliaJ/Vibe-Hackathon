@@ -1,0 +1,203 @@
+/* --- Global Styles & Typography --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #343a40;
+}
+
+h1#logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
+  color: #e67e22;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  margin-left: 1.5rem;
+}
+
+header nav a {
+  font-weight: 600;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #e67e22;
+}
+
+/* --- Hero Section --- */
+#hero {
+  background: url('https://media.istockphoto.com/id/1179619586/photo/traditional-kenyan-dish-ugali-with-sukuma-wiki-stewed-collard-greens.jpg?s=1024x1024&w=is&k=20&c=q11x44q8q6J_yGvE-y6E8G_V1d4x4T-rT7gY5gG6EaA=') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 8rem 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+#hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+#exploreBtn {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#exploreBtn:hover {
+  background-color: #d35400;
+  transform: translateY(-2px);
+}
+
+/* --- Search Section --- */
+#search-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #f1f2f6;
+}
+
+#search-section h2 {
+  margin-bottom: 1rem;
+}
+
+#searchInput {
+  padding: 0.75rem;
+  width: 80%;
+  max-width: 500px;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #e67e22;
+}
+
+#search-section button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#search-section button:hover {
+  background-color: #2980b9;
+}
+
+#searchMessage {
+  margin-top: 1rem;
+  color: #e74c3c;
+}
+
+/* --- Featured Recipes Grid --- */
+#featured {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.recipe-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-card a {
+  display: block;
+  padding: 1.5rem;
+}
+
+.recipe-card h3 {
+  margin: 0.5rem 0;
+  color: #343a40;
+}
+
+.recipe-card p {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}

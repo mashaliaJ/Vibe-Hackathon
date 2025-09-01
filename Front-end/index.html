@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LitBites - Kenyan Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1 id="logo">🔥 LitBites</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h2>Discover Tasty Kenyan Recipes 🇰🇪</h2>
+    <p>From street food to homestyle cooking, LitBites brings you all the flavor.</p>
+    <button id="exploreBtn">Explore Recipes</button>
+  </section>
+
+  <!-- Search Bar -->
+<section id="search-section">
+  <h2>🔎 Search Recipes by Ingredient</h2>
+  <input type="text" id="searchInput" placeholder="e.g. beef, flour, sukuma wiki...">
+  <button onclick="searchRecipes()">Search</button>
+  <p id="searchMessage"></p>
+  <ul id="searchResults"></ul>
+</section>
+
+
+  <!-- Featured Recipes -->
+  <section id="featured">
+    <h2>Featured Recipes</h2>
+    <div class="recipe-grid">
+      <article class="recipe-card">
+        <a href="recipes/ugali.html">
+        <img src="https://media.istockphoto.com/id/1440695422/photo/cornmeal-mush-and-vegetable-dish-served-on-a-white-plate-on-a-wooden-table-african.jpg?s=1024x1024&w=is&k=20&c=LuUBrpLPEU2qy-nTOEJMh0rGXeOP9yyU7sZygDHiQsE=" alt="Ugali" width="500">
+        <h3>Ugali & Sukuma Wiki</h3>
+        </a>
+        <p>A Kenyan staple dish that never goes out of style.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/nyama-choma.html">
+        <img src="https://images.pexels.com/photos/3997609/pexels-photo-3997609.jpeg?cs=srgb&dl=pexels-gonzalo-guzman-391363-3997609.jpg&fm=jpg&_gl=1*1kszcf4*_ga*MTg4MDEwNDgxNS4xNzU1Mzc1MDY1*_ga_8JE65Q40S6*czE3NTY2NjY1NjMkbzIkZzEkdDE3NTY2NjY4MjMkajckbDAkaDA." alt="Nyama Choma" width="500">
+        <h3>Nyama Choma</h3>
+        </a>
+        <p>Grilled goat/beef, the ultimate Kenyan weekend vibe.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/Chapati.html">
+        <img src="https://media.istockphoto.com/id/618764348/photo/famous-asian-flat-bread-known-as-parathas.jpg?s=1024x1024&w=is&k=20&c=VBKErsVV0m8J92svxlJrQ9GB7Ce89nJ-3pwlkO4KUuw=" alt="Chapati" width="500">
+        <h3>Chapati</h3>
+        </a>
+        <p>Soft, layered flatbread perfect with stew or tea.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/white-rice.html">
+        <img src="https://images.pexels.com/photos/6646073/pexels-photo-6646073.jpeg" alt="White Rice" width="500">
+        <h3>White Rice</h3>
+        </a>
+        <p>Spiced rice dish with beef or chicken, a Swahili classic.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/samosa.html">
+        <img src="https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg" alt="Samosa" width="500">
+        <h3>Samosa</h3>
+        </a>
+        <p>Crispy golden triangles stuffed with spiced meat or veggies.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/githeri.html">
+        <img src="https://media.istockphoto.com/id/1490554823/photo/african-githeri.jpg?s=1024x1024&w=is&k=20&c=-gVG8qgFhDZ-1jWgYEdL9ISjB_9ihQfTfpjXpykRCX8=" alt="Githeri" width="500">
+        <h3>Githeri</h3>
+        </a>
+        <p>Hearty mix of maize and beans, a true Kenyan comfort food.</p>
+      </article>
+
+      <article class="recipe-card">
+        <a href="recipes/mandazi.html">
+        <img src="https://media.istockphoto.com/id/1210347205/photo/mandazi-is-a-slightly-sweet-east-african-street-food-spicy-airy-yeast-doughnut-dough-made.jpg?s=1024x1024&w=is&k=20&c=DAI4Dsa9Qu4FvdvQ99j3x7sU_NM6S--tmmGjRWvF8DI=" alt="Mandazi" width="500">
+        <h3>Mandazi</h3>
+        </a>
+        <p>Sweet fried dough, perfect for breakfast or tea time.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LitBites | Made with ❤️ in Kenya</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
