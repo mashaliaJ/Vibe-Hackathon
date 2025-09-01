@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Website Footer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 15px;
+      color: #ff6f61;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 8px 0;
+    }
+
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #ddd;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #ff6f61;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 20px;
+      color: #ddd;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff6f61;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 70%;
+      border: none;
+      border-radius: 6px;
+      margin-right: 5px;
+    }
+
+    .newsletter button {
+      padding: 10px 15px;
+      border: none;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .newsletter button:hover {
+      background: #e55a4f;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      transition: background 0.3s;
+    }
+
+    #backToTop:hover {
+      background: #e55a4f;
+    }
+  </style>
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Your content above -->
+
+  <footer>
+    <div class="footer-container">
+      <!-- Navigation -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Desserts</a></li>
+          <li><a href="#">Drinks</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-section">
+  <h4>Follow Us</h4>
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+      <!-- Newsletter -->
+      <div class="footer-section newsletter">
+        <h3>Newsletter</h3>
+        <form onsubmit="subscribe(event)">
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy;2025 LitBites | Made with ❤️ in Kenya. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // Show button on scroll
+    window.onscroll = function() {
+      let btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Newsletter Subscribe (demo)
+    function subscribe(event) {
+      event.preventDefault();
+      let email = document.getElementById("email").value;
+      alert("Thank you for subscribing, " + email + "!");
+      document.getElementById("email").value = "";
+    }
+  </script>
+</body>
+</html>

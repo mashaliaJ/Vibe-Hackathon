@@ -38,9 +38,14 @@
     </ol>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 LitBites | Made with ❤️ in Kenya</p>
-  </footer>
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 </body>
 </html>
