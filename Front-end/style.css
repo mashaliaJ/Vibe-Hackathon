@@ -1,293 +1,421 @@
-/* --- General Styles --- */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
+/*
+ * Google Fonts Import
+ * You can uncomment these lines to use more visually appealing fonts.
+ */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap'); */
+
+/*
+ * Root Variables
+ * This allows for easy color and font changes across the entire site.
+ */
+:root {
+  --primary-color: #e57373; /* A warm, inviting red */
+  --secondary-color: #4db6ac; /* A soothing teal */
+  --background-dark: #2c3e50; /* A dark, professional blue-gray */
+  --background-light: #f4f6f7; /* A light off-white */
+  --text-dark: #333; /* Dark gray for text */
+  --text-light: #f4f6f7;
+  --text-accent: #ffcc80; /* A soft orange for accents */
+  --link-hover-dark: #34495e; /* A slightly darker blue-gray for hover */
+  --font-family-body: 'Roboto', sans-serif;
+  --font-family-heading: 'Playfair Display', serif;
 }
 
-a {
-    text-decoration: none;
-    color: inherit; /* Inherits the color from the parent */
+/*
+ * General Body & Global Styles
+ */
+body {
+  font-family: var(--font-family-body);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Base Styles for all sections */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #343a40;
-    margin: 0;
+  font-family: var(--font-family-heading);
+  color: var(--background-dark);
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-/* --- Header & Navigation --- */
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/*
+ * Header Styles
+ */
 header {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 #logo {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2.5rem;
-    color: #e67e22;
+  font-size: 2rem;
+  font-family: var(--font-family-heading);
+  color: var(--primary-color);
+  margin: 0;
 }
 
 header nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-header nav li {
-    margin-left: 1.5rem;
+header nav ul li {
+  margin-left: 20px;
 }
 
-header nav a {
-    font-weight: 600;
-    color: #555;
-    transition: color 0.3s ease;
+header nav ul li a {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header nav a:hover {
-    color: #e67e22;
+header nav ul li a:hover {
+  color: var(--text-accent);
+  transform: translateY(-2px);
 }
 
-/* --- Hero Section --- */
+/*
+ * Hero Section
+ */
 #hero {
-    position: relative; /* Essential for positioning the image behind the text */
-    height: 60vh; /* Sets a fixed height for the hero section */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 2rem;
-    overflow: hidden; /* Hides any part of the image that goes outside the section */
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 0;
+  overflow: hidden;
 }
 
 #hero img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire hero section */
-    z-index: -1; /* Puts the image behind all other content */
-}
-
-/* Hero content styling */
-#hero h2, #hero p, #hero button {
-    position: relative;
-    z-index: 1; /* Ensures text and button are above the image */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 #hero h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
-    margin-bottom: 0.5rem;
-    color:white;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--text-light);
+  font-weight: 700;
 }
 
 #hero p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-bottom: 2rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 600px;
+  margin: 0 20px 20px;
 }
 
 #exploreBtn {
-    background-color: #e67e22;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #exploreBtn:hover {
-    background-color: #d35400;
-    transform: translateY(-2px);
+  background-color: #d35454;
+  transform: translateY(-3px);
 }
 
-/* --- Search Section --- */
+/*
+ * Search Section
+ */
 #search-section {
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: #f1f2f6;
+  background-color: #ecf0f1;
+  padding: 40px 20px;
 }
 
 #searchInput {
-    padding: 0.75rem;
-    width: 80%;
-    max-width: 500px;
-    border: 2px solid #ddd;
-    border-radius: 50px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
+  padding: 12px;
+  width: 70%;
+  max-width: 500px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #searchInput:focus {
-    border-color: #e67e22;
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(229, 115, 115, 0.5);
 }
 
 #search-section button {
-    padding: 0.75rem 1.5rem;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  padding: 12px 25px;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #search-section button:hover {
-    background-color: #2980b9;
-}
-
-#searchMessage {
-    margin-top: 1rem;
-    color: #e74c3c;
+  background-color: #3b9e95;
+  transform: translateY(-2px);
 }
 
 #searchResults {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
 #searchResults li {
-    width: 100%;
-    max-width: 300px;
+  background-color: var(--background-light);
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.recipe-card-small {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease;
+#searchResults li:hover {
+  transform: translateX(5px);
 }
 
-.recipe-card-small:hover {
-    transform: translateY(-5px);
-}
-
-.recipe-card-small img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.recipe-card-small h4 {
-    padding: 0.75rem 1rem;
-    margin: 0;
-    text-align: center;
-    color: #333;
-}
-
-/* --- Featured Recipes Grid --- */
-#featured {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.recipe-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+/*
+ * Recipes Grid (Featured & Categories)
+ */
+.recipe-grid, .recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .recipe-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--text-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.recipe-card a {
-    display: block;
-    padding: 1.5rem;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
 
 .recipe-card h3 {
-    margin: 0.5rem 0;
-    color: #343a40;
+  font-size: 1.25rem;
+  color: var(--background-dark);
+  margin: 15px 15px 5px;
 }
 
 .recipe-card p {
-    color: #777;
-    font-size: 0.9rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 15px 15px;
 }
 
-/* --- Footer --- */
+.recipe-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+ * Footer Styles
+ */
 footer {
-    background-color: #343a40;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 0.9rem;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 5px solid var(--primary-color);
 }
 
-footer p {
-    margin: 0;
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* --- Media Queries for Responsiveness --- */
+.footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  font-family: var(--font-family-heading);
+  color: var(--text-accent);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/*
+ * Links & Lists
+ */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-section a:hover {
+  color: var(--secondary-color);
+  transform: translateX(5px);
+}
+
+/*
+ * Social Media Icons
+ */
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: block;
+}
+
+.social-icons img {
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid var(--text-light);
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/*
+ * Copyright Text
+ */
+.copyright {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #bdc3c7;
+  border-top: 1px solid #4a6c8e;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyright .heart {
+  color: var(--primary-color);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/*
+ * Responsive Design
+ */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
-    header nav {
-        margin-top: 1rem;
-    }
+  header nav ul {
+    margin-top: 15px;
+  }
 
-    header nav ul {
-        justify-content: center;
-    }
+  header nav ul li {
+    margin: 0 10px;
+  }
 
-    header nav li {
-        margin: 0 0.5rem;
-    }
+  #hero h2 {
+    font-size: 2.5rem;
+  }
 
-    #search-section input, #search-section button {
-        display: block;
-        width: 100%;
-        margin-left: 0;
-        box-sizing: border-box; /* Ensures padding doesn't affect the width */
-    }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
 
-    #search-section button {
-        margin-top: 1rem;
-    }
+  .social-icons {
+    justify-content: center;
+  }
 }
