@@ -40,6 +40,8 @@ The project includes a **frontend** built with HTML, CSS, and JavaScript, and a 
 - **Version Control**: Git & GitHub  
 
 ---
+## Pitch deck
+-https://www.canva.com/design/DAGxzwCao6c?ui=eyJLIjp7IkEiOiJlNzk5ZTlmMi00YjRiLTRmMjMtOTdmNC04M2JiYjE5NjY0OWQifX0
 
 ## Authors
 
