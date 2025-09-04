@@ -46,7 +46,7 @@ The project includes a **frontend** built with HTML, CSS, and JavaScript, and a 
 ## Authors
 
    - **Macharia Kamau**:https://github.com/mashaliaJ
-   - **Mary Wanjiku**: https://github.com/maryashee
+   - **Mary Kamau**: https://github.com/maryashee
 
 
      
